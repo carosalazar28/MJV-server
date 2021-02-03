@@ -14,6 +14,16 @@ const userSchema = new Schema ({
     type: String,
     required: true,
   },
+  lastname: {
+    type: String,
+  },
+  rolDeveloper: {
+    type: String,
+  },
+  job: {
+    type: Boolean,
+    default: true,
+  },
 }, {
   timestamps: true,
 });
