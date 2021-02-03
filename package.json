@@ -1,0 +1,16 @@
+{
+  "name": "api-mjv",
+  "version": "1.0.0",
+  "description": "API REST for test Full Stack MJV",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint . --fix",
+    "format": "prettier . --write"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
+  }
+}
