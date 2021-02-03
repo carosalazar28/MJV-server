@@ -9,7 +9,6 @@ module.exports = {
       const { name, email, password } = req.body;
       const encPassword = await bcrypt.hash( password, 8)
       const user = await User.create({ name, email, password: encPassword })
-      console.log(user)
       const token = jwt.sign(
         { id: user._id },
         process.env.SECRET,
@@ -18,7 +17,29 @@ module.exports = {
       res.status(201).json({ token })
     }
     catch(err) {
-      console.log(err)
+      res.status(400).json({ message: err.message })
+    }
+  },
+
+  async signin( req, res ) {
+    try {
+      const { email, password } = req.body;
+      const user = await User.findOne({ email })
+      if( !user ) {
+        throw new Error('User or password invalid' )
+      }
+      const isValid = await bcrypt.compare( password, user.password )
+      if(!isValid) {
+        throw new Error( 'User or password invalid' )
+      }
+      const token = jwt.sign(
+        { id: user._id },
+        process.env.SECRET,
+        { expiresIn: 60*60*24 }
+      );
+      res.status(201).json({ token })
+    }
+    catch(err) {
       res.status(400).json({ message: err.message })
     }
   },
