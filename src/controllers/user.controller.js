@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 module.exports = {
   async signup( req, res ) {
     try {
-      console.log(req.body)
       const { name, email, password } = req.body;
       const encPassword = await bcrypt.hash( password, 8)
       const user = await User.create({ name, email, password: encPassword })
