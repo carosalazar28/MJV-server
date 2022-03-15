@@ -11,7 +11,7 @@ function connect() {
   mongoose.connect(mongoURI, options);
 
   mongoose.connection.once('open', () =>
-    console.log('connection established sucessfully')
+    console.log('connection established sucessfully', mongoURI)
   );
   mongoose.connection.on('error', (err) =>
     console.log('something went wrong', err)
@@ -19,4 +19,4 @@ function connect() {
   return mongoose.connection;
 }
 
-module.exports = { connect }
+module.exports = { connect };
