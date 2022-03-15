@@ -13,6 +13,7 @@ git clone https://github.com/carosalazar28/MJV-client.git
 ## Usage
 
 ## Routes
+
 You can use https://mjv-db.herokuapp.com and the next url's
 
 ```bash
@@ -32,6 +33,7 @@ yarn start
 ## Features developed
 
 ### User model
+
 The model has the next properties:
 
 - name
@@ -42,6 +44,7 @@ The model has the next properties:
 - job
 
 ### User Controller
+
 The controller has the next method's:
 
 - signup
@@ -51,10 +54,11 @@ The controller has the next method's:
 - destroy
 
 ### Middleware
+
 - Middleware for create a token with JsonWebToken to save the user-id
 
-
 ### Linter to normalize the project with esLint, Prettier, and EditorConfig
+
 - Files with config
 
 ## Environmental Variables
@@ -65,8 +69,11 @@ The project has environmental variables for connect with the database, deploy in
 PORT
 MONGO_URI
 SECRET
+SENDGRID_API_KEY
 ```
+
 ## Build with 🛠️
+
 The tools for developing the project was
 
 Expressjs - Web application infrastructure with Nodejs
@@ -74,9 +81,10 @@ Nodejs - JavaScript runtime
 Mongo - Most popular non-SQL database
 Mongoose - ODM for the database
 
-
 ## Author ✒️
+
 Carolina Salazar - FrontEnd Developer - [carosalazar28](https://github.com/carosalazar28)
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
