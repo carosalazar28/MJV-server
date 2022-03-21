@@ -4,6 +4,8 @@ const { auth } = require('../utils/auth');
 
 router.route('/sign-up').post(userController.signup);
 router.route('/sign-in').post(userController.signin);
+router.route('/password-recovery').post(userController.passwordRecovery);
+router.route('/password-reset').put(auth, userController.resetPassword);
 router.route('/').get(auth, userController.show);
 router.route('/').put(auth, userController.update);
 router.route('/').delete(auth, userController.destroy);
